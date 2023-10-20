@@ -1,5 +1,24 @@
 ﻿@page "/"
+@using System.Drawing
 
 <PageTitle>Index</PageTitle>
-<Board></Board>
+<p>
+	Board Color:
+	<input @bind-value="BoardColor" />
+</p>
+<p>
+	Player1 Color:
+	<input @bind-value="Player1Color" />
+</p>
+<p>
+	Player2 Color
+	<input @bind-value="Player2Color" />
+</p>
 
+<Board BoardColor="ColorTranslator.FromHtml(BoardColor)" Player1Color="ColorTranslator.FromHtml(Player1Color)" Player2Color="ColorTranslator.FromHtml(Player2Color)"></Board>
+
+@code{
+	string BoardColor { get; set; } = "yellow";
+	string Player1Color { get; set; } = "red";
+	string Player2Color { get; set; } = "blue";
+}
