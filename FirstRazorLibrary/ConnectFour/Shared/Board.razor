@@ -66,8 +66,9 @@
 
         try
         {
+            var turn = State.PlayerTurn;
             var landingRow = State.PlayPiece(col);
-            var cssClass = $"player{State.PlayerTurn} col{col} drop{landingRow}";
+            var cssClass = $"player{turn} col{col} drop{landingRow}";
             Pieces[State.CurrentTurn - 1] = cssClass;
         }
         catch (ArgumentException ex)
